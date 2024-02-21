@@ -1,0 +1,44 @@
+.rbi-form {
+  height: 65px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 23px 19px;
+  justify-content: space-between;
+  border-radius: 9px;
+  background: #f7f7f7;
+}
+.rbi-input {
+  width: 70%;
+  outline: none;
+  border: none;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #333;
+  background: #f7f7f7;
+}
+.rbi-input::placeholder {
+  color: #a19fa1;
+}
+.codes {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+
+.code-item {
+  padding: 6px 19px;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 20px;
+  background: #f1f1f1;
+}

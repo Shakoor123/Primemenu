@@ -1,0 +1,123 @@
+/* rui footer */
+
+.rui {
+  display: flex;
+  padding: 65px 33px 20px 62px;
+  flex-direction: column;
+  position: relative;
+}
+.rui-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.rui-wrapper {
+  .resLogo {
+    align-self: center;
+    margin-bottom: 86px;
+  }
+}
+.rui-headding {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 55px;
+  margin-bottom: 20px;
+}
+.rui-bold {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 53px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 55px;
+}
+
+.rui-form {
+  display: flex;
+  flex-direction: column;
+}
+.rui-input-name {
+  padding: 9px 15px 9px 15px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #f1f1f1;
+  background: #fff;
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 14px;
+  outline: none;
+}
+.rui-input-contry {
+  padding: 9px 15px 9px 15px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #f1f1f1;
+  background: #fff;
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 14px;
+  outline: none;
+  width: 30%;
+}
+.rui-input-name::placeholder {
+  color: #9e9d9d;
+}
+.rui-form-row {
+  display: flex;
+  width: 100%;
+  gap: 14px;
+}
+.rui-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  outline: none;
+  border: none;
+  margin-bottom: 86px;
+}
+.rui-form-row {
+  .rui-input-name {
+    width: 100%;
+  }
+}
+.rui-footer-skip {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 14px;
+}
+.rui-footer-text {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+.ruifooterImage {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  z-index: 5;
+}
+.rui-footer-text {
+  margin-bottom: 130px;
+}
