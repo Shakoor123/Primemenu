@@ -1,7 +1,7 @@
 /* restaurant page */
 
 .restaurant {
-  background: #30313d;
+  background: #ffffff;
   /* background-image: url("./../public/media/stock-600x600/resBg.png"); */
   display: none;
   align-items: center;
@@ -40,49 +40,50 @@
   display: flex;
   width: 100%;
   height: 250px;
-  color: white;
+  color: #212529;
   position: relative;
   border-radius: 13px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .rescolor1 {
-  background-image: linear-gradient(#f96c44, #f99044);
+  background-color: #dee9d1;
 }
 
 .rescolor2 {
-  background-image: linear-gradient(#6e00fe, #ab6dfc);
+  background-color: #fff6ec;
 }
 
 .rescolor3 {
-  background-image: linear-gradient(#39b2c2, #47cadc);
+  background-color: #dee9d1;
 }
 
 .rescolor4 {
-  background-image: linear-gradient(#fa467d, #fd5286);
+  background-color: #dee9d1;
 }
 
 .menuTitle {
-  color: #fff;
+  color: #212529;
   font-family: Poppins;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
+  margin-left: 25px;
+  margin-top: 35px;
 }
 .menuTitle:hover {
-  color: white;
+  color: #212529;
 }
 .menuTitle:visited {
-  color: white;
+  color: #212529;
 }
 .menuImage {
-  max-width: 40%;
+  max-width: 140px;
 }
 .menuText {
-  color: #fff;
+  color: #212529;
   font-family: Poppins;
   font-size: 12px;
   font-style: normal;
@@ -90,20 +91,20 @@
   line-height: 18px;
 }
 .menuText:hover {
-  color: white;
+  color: #212529;
 }
 .menuText:visited {
-  color: white;
+  color: #212529;
 }
 .menuImage {
-  max-width: 40%;
+  max-width: 153px;
 }
 
 .menuButton {
   width: 127px;
   height: 37px;
   border-radius: 34px;
-  background-color: white;
+  background-color: #ffffff;
   color: black;
   display: flex;
   align-items: center;
@@ -128,6 +129,7 @@
   border-radius: 13px;
   color: white;
   gap: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .secondMenu {
@@ -163,15 +165,24 @@
 }
 .resFooterText1 {
   font-size: 10px;
-  color: rgba(187, 187, 187, 0.22);
+  color: #bbbbbb;
   font-weight: 400;
+}
+.menuCardDeatails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 7px;
+  padding-top: 11px;
 }
 .menuCardLeft {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  width: 50%;
 }
 .resLogo {
-  margin-top: 20px;
-  width: 245px;
+  width: 170px;
+  max-height: 150px;
+  object-fit: contain;
 }

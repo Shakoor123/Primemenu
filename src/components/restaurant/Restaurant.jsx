@@ -1,54 +1,60 @@
 import React from "react";
 import { useState } from "react";
 import "./Restaurant.css";
+import Header from "../header/Header";
 const Restaurant = () => {
   return (
     <>
       {/* {page == 2 && <RestaurantUserInput setPage={setPage} />}
       {page == 3 && <RestaurantBrandInput setPage={setPage} />} */}
-      <div class="restaurant">
+      {/* <Header /> */}
+      <div class="restaurant" style={{ paddingTop: "20px" }}>
         <div class="resBody">
           <img src="/images/logo.png" alt="" class="resLogo" />
           <div class="menuCard rescolor1">
-            <div class="menuCardLeft">
-              <h3 class="menuTitle">Dine-in menu</h3>
-              <span class="menuText">
-                Order it yourself from the wide range of food on our
-                restaurant's digital menu
-              </span>
-              <span
-                class="menuButton"
-                onClick={() => {
-                  // if (localStorage.getItem("engage-primeads")) {
-                  window.location.href =
-                    "https://www.food-order.in/aryaas-regent?iden=A1&idel=TABLE&conf=Dine-In";
-                  // } else {
-                  //   setPage(2);
-                  // }
-                }}
-              >
-                View menu
-              </span>
+            <span class="menuTitle">Check our Website</span>
+            <div className="menuCardDeatails">
+              <div class="menuCardLeft">
+                <span class="menuText">
+                  Order it yourself from the wide range of food on our
+                  restaurant's digital menu
+                </span>
+                <span
+                  class="menuButton"
+                  onClick={() => {
+                    // if (localStorage.getItem("engage-primeads")) {
+                    window.location.href =
+                      "https://www.food-order.in/aryaas-regent?iden=A1&idel=TABLE&conf=Dine-In";
+                    // } else {
+                    //   setPage(2);
+                    // }
+                  }}
+                >
+                  View Items
+                </span>
+              </div>
+              <img src="/images/web.png" alt="" class="menuImage" />
             </div>
-            <img src="/images/dosa.png" alt="" class="menuImage" />
           </div>
           <div class="menuCard rescolor2">
-            <div class="menuCardLeft">
-              <h3 class="menuTitle">Deals</h3>
-              <span class="menuText">
-                Use the brand code to explore what every brand offers. Find the
-                brand code from the restaurant TV commercials
-              </span>
-              <span
-                class="menuButton"
-                onClick={() => {
-                  // setPage(3);
-                }}
-              >
-                Coming Soon
-              </span>
+            <span class="menuTitle">Contact Us</span>
+            <div className="menuCardDeatails">
+              <div class="menuCardLeft">
+                <span class="menuText">
+                  Use the brand code to explore what every brand offers.Find the
+                  brand code from the restaurant TV commercials
+                </span>
+                <span
+                  class="menuButton"
+                  onClick={() => {
+                    // setPage(3);
+                  }}
+                >
+                  Discover
+                </span>
+              </div>
+              <img src="/images/new-call.png" alt="" class="menuImage" />
             </div>
-            <img src="/images/discounts.png" alt="" class="menuImage" />
           </div>
           <div class="secondMenu">
             <a
@@ -57,7 +63,7 @@ const Restaurant = () => {
               class="secondMenuItem rescolor1"
             >
               <img src="/images/advertise.png" alt="" class="secondMenuImage" />
-              <span class="menuTitle">
+              <span class="menuTitle" style={{ margin: 0 }}>
                 Advertise <br /> with us
               </span>
               <span class="menuText">Advertise to premium community</span>
@@ -68,7 +74,7 @@ const Restaurant = () => {
               class="secondMenuItem rescolor4"
             >
               <img src="/images/rate_us.png" alt="" class="secondMenuImage" />
-              <span class="menuTitle">
+              <span class="menuTitle" style={{ margin: 0 }}>
                 Rate <br /> Us
               </span>
               <span class="menuText">
@@ -76,7 +82,7 @@ const Restaurant = () => {
               </span>
             </a>
           </div>
-          <div class="secondMenu">
+          {/* <div class="secondMenu">
             <a
               style={{ textDecoration: "none" }}
               href="https://wa.me/919526157373?text= Hi, I would like to book party halls at Aryaas Regent, Kindly let me know the availability and price details"
@@ -105,31 +111,15 @@ const Restaurant = () => {
                 Book your room for a stay at this location
               </span>
             </a>
-          </div>
+          </div> */}
           <div class="resFooter">
+            <span class="resFooterText1">Made in India | A DMS product</span>
             <img src="/images/resFooter1.png" />
-            <div className="resfooterItem">
-              <a style={{ textDecoration: "none" }} href="https://primeads.ai/">
-                <img
-                  src="/images/engageFooter.svg"
-                  alt=""
-                  class="resFooterImage"
-                />
-              </a>
-              <span class="resFooterText">Made in India | Fuelled by DMS</span>
-            </div>
+            <img src="/images/resFooter3.png" style={{ height: "80px" }} />
             <img src="/images/resFooter2.png" />
-            <img
-              src="/images/resFooter3.png"
-              style={{ mixBlendMode: "multiply" }}
-            />
-            <span class="resFooterText1">
-              More excitement on the way. Stay Tuned KOCHI
-            </span>
           </div>
         </div>
       </div>
-      <h2 className="resPc">Available on mobile only</h2>
     </>
   );
 };
