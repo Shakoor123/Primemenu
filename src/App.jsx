@@ -17,7 +17,7 @@ const App = () => {
         </BrowserRouter>
       </div>
       <div className="App-non-mobile">
-        <span className="h-title">Availbale on mobile only</span>
+        <span className="h-title">Available on mobile only</span>
       </div>
     </>
   );
