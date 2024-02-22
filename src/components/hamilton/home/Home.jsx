@@ -60,11 +60,26 @@ export default function Home() {
           className="h-logo"
         />
         {place && (
-          <Chip
-            label={place}
-            sx={{ backgroundColor: "#EAC6A0", fontWeight: "500" }}
-            style={{ marginRight: "25px" }}
-          />
+          <div className="h-header-place">
+            <svg
+              width="15"
+              height="14"
+              viewBox="0 0 15 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 13.0015C3.04708 10.1673 8.47775 6.46925 13.8577 13.0015"
+                stroke="#4B4B4B"
+                stroke-linecap="round"
+              />
+              <path
+                d="M12.205 5.04049C12.205 7.53421 10.1181 9.58099 7.51215 9.58099C4.90624 9.58099 2.81934 7.53421 2.81934 5.04049C2.81934 2.54678 4.90624 0.5 7.51215 0.5C10.1181 0.5 12.205 2.54678 12.205 5.04049Z"
+                stroke="#4B4B4B"
+              />
+            </svg>
+            {place}
+          </div>
         )}
       </div>
       <div className="h-schoolSection">

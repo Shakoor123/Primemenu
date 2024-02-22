@@ -178,3 +178,16 @@
   align-items: center;
   justify-content: center;
 }
+.h-header-place {
+  padding: 12px;
+  border-radius: 50px;
+  border: 1px solid #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b4b4b;
+  margin-right: 25px;
+}
