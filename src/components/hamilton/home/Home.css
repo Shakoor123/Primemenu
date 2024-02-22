@@ -1,0 +1,179 @@
+.h-home {
+  position: relative;
+}
+.h-header {
+  background-image: url("/images/hamilton/header-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 130px;
+  display: flex;
+  align-items: center;
+}
+
+.h-logo {
+  width: 155px;
+  max-height: 100px;
+  object-fit: contain;
+  margin-left: 17px;
+}
+.h-schoolSection {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0;
+}
+
+.h-schoolSection-top {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.h-contents {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-left: 25px;
+}
+.h-title {
+  font-size: 21px;
+  color: #212529;
+  font-weight: 600;
+}
+.h-lighttitle {
+  font-size: 21px;
+  color: #212529;
+  font-weight: 400;
+}
+.h-subtitle {
+  font-size: 15px;
+  color: #212529;
+  font-weight: 400;
+}
+.h-text {
+  font-size: 11px;
+  color: #212529;
+  font-weight: 400;
+  margin-top: 3px;
+}
+.h-cable {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.h-schoolSection-bottom {
+  max-width: calc(100% - 62px);
+  align-self: center;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 10px;
+  height: 171px;
+  object-fit: cover;
+}
+.h-galleryImages {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  margin-right: 25px;
+  gap: 16px;
+  margin-top: 12px;
+}
+.h-gallery-left {
+  width: calc(45% - 8px);
+  object-fit: contain;
+}
+.h-gallery-right {
+  width: calc(55% - 8px);
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.h-gallery-right img {
+  height: 100%;
+}
+.h-bgCard {
+  background-image: url("/images/hamilton/web-bg.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 227px;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  padding: 22px;
+}
+.h-teacherbg {
+  background-image: url("/images/hamilton/teacher-bg.png");
+}
+.h-bgCard .h-contents {
+  max-width: 170px;
+  margin-top: 33px;
+}
+.h-bgCard .h-contents .h-text {
+  margin-top: 11px;
+  max-width: 155px;
+}
+.h-bgCard .h-contents .h-prmarybutton {
+  margin-top: 11px;
+}
+.h-banner-image {
+  width: auto;
+  margin: 0 25px;
+}
+.h-cta-wrapper {
+  margin: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+.h-cta-image {
+  max-width: 110px;
+}
+.h-cta-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.h-cta-item .h-text {
+  text-align: center;
+}
+.h-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 25px;
+}
+.h-footer-text {
+  color: #bbb;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 400;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+.h-sticky-footer {
+  background-color: #fff;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.h-sticky-footer-text {
+  color: #000;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 400;
+}
+.h-sticky-footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
