@@ -1,7 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
-import { Button } from "@mui/material";
+import { Button, Chip } from "@mui/material";
+import axios from "axios";
 export default function Home() {
+  const [place, setPlace] = useState("");
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+  function success(pos) {
+    var crd = pos.coords;
+    getLocationName(crd.latitude, crd.longitude)
+      .then((locationName) => {
+        setPlace(locationName?.suburb);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+  function errors(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+  async function getLocationName(latitude, longitude) {
+    try {
+      const response = await axios.get(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+      );
+      return response.data.address;
+    } catch (error) {
+      return "Error fetching location";
+    }
+  }
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.permissions
+        .query({ name: "geolocation" })
+        .then(function (result) {
+          if (result.state === "granted") {
+            //If granted then you can directly call your function here
+            navigator.geolocation.getCurrentPosition(success, errors, options);
+          } else if (result.state === "prompt") {
+            //If prompt then the user will be asked to give permission
+            navigator.geolocation.getCurrentPosition(success, errors, options);
+          } else if (result.state === "denied") {
+            //If denied then you have to show instructions to enable location
+          }
+        });
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }, []);
   return (
     <div className="h-home">
       <div className="h-header">
@@ -10,6 +59,13 @@ export default function Home() {
           alt=""
           className="h-logo"
         />
+        {place && (
+          <Chip
+            label={place}
+            sx={{ backgroundColor: "#EAC6A0", fontWeight: "500" }}
+            style={{ marginRight: "25px" }}
+          />
+        )}
       </div>
       <div className="h-schoolSection">
         <div className="h-schoolSection-top">
