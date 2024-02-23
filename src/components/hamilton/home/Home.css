@@ -87,9 +87,12 @@
   display: flex;
   flex-direction: column;
   gap: 17px;
+  max-height: 209px;
+  height: auto;
 }
 .h-gallery-right img {
   height: 100%;
+  object-fit: contain;
 }
 .h-bgCard {
   background-image: url("/images/hamilton/web-bg.png");

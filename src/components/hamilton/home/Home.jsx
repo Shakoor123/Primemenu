@@ -4,6 +4,7 @@ import { Button, Chip } from "@mui/material";
 import axios from "axios";
 export default function Home() {
   const [place, setPlace] = useState("");
+  const [count, setCount] = useState(1);
   var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -13,11 +14,18 @@ export default function Home() {
     var crd = pos.coords;
     getLocationName(crd.latitude, crd.longitude)
       .then((locationName) => {
-        setPlace(locationName?.suburb);
+        var placesArray = locationName.split(",");
+        var splitedplaces = placesArray[0].split(" ");
+        if (splitedplaces.length > 0) {
+          setPlace(`${splitedplaces[0]}`);
+        } else {
+          setPlace(`${placesArray[0]}`);
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
       });
+    setCount(count + 1);
   }
   function errors(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
@@ -25,14 +33,22 @@ export default function Home() {
   async function getLocationName(latitude, longitude) {
     try {
       const response = await axios.get(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`,
+        {
+          headers: {
+            "accept-language": "en-US,en;q=0.9", // Specify English language preference
+          },
+        }
       );
-      return response.data.address;
+      return response.data.display_name;
     } catch (error) {
       return "Error fetching location";
     }
   }
   useEffect(() => {
+    checkLocationPermission();
+  }, []);
+  const checkLocationPermission = () => {
     if (navigator.geolocation) {
       navigator.permissions
         .query({ name: "geolocation" })
@@ -44,13 +60,14 @@ export default function Home() {
             //If prompt then the user will be asked to give permission
             navigator.geolocation.getCurrentPosition(success, errors, options);
           } else if (result.state === "denied") {
-            //If denied then you have to show instructions to enable location
+            navigator.geolocation.getCurrentPosition(success, errors, options);
           }
         });
     } else {
       console.log("Geolocation is not supported by this browser.");
     }
-  }, []);
+  };
+
   return (
     <div className="h-home">
       <div className="h-header">
