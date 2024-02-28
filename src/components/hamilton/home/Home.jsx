@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 import { Button, Chip } from "@mui/material";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addLocation } from "../../../redux/locationSlice";
+import { createurltrackerusingCode } from "../../../helper/apiCalls";
+import { Link, useNavigate } from "react-router-dom";
 export default function Home() {
   const [place, setPlace] = useState("");
   const [count, setCount] = useState(1);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   var options = {
     enableHighAccuracy: true,
     timeout: 5000,
@@ -13,7 +19,9 @@ export default function Home() {
   function success(pos) {
     var crd = pos.coords;
     getLocationName(crd.latitude, crd.longitude)
-      .then((locationName) => {
+      .then((data) => {
+        createNewEntryforUrltracker(data);
+        var locationName = data?.display_name;
         var placesArray = locationName.split(",");
         var splitedplaces = placesArray[0].split(" ");
         if (splitedplaces.length > 0) {
@@ -24,10 +32,12 @@ export default function Home() {
       })
       .catch((error) => {
         console.error("Error:", error);
+        createNewEntryforUrltracker();
       });
     setCount(count + 1);
   }
   function errors(err) {
+    createNewEntryforUrltracker();
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
   async function getLocationName(latitude, longitude) {
@@ -40,11 +50,45 @@ export default function Home() {
           },
         }
       );
-      return response.data.display_name;
+      return response.data;
     } catch (error) {
       return "Error fetching location";
     }
   }
+  const createNewEntryforUrltracker = async (location) => {
+    var userId = window.location.pathname.split("/")[2];
+    if (!location && userId) {
+      const res = await createurltrackerusingCode({
+        code: "home",
+        user_id: userId,
+      });
+      dispatch(addLocation({ user_id: userId }));
+      localStorage.setItem(
+        "primemenu-data",
+        JSON.stringify({ user_id: userId })
+      );
+      return;
+    } else {
+      var data = {
+        code: "home",
+        user_id: userId,
+        location: {
+          name: location?.display_name,
+          location_data: location.address,
+          city: location?.address?.town || location?.address?.suburb,
+          district: location?.address?.state_district,
+          state: location?.address?.state,
+          country: location?.address?.country,
+          latitude: location?.lat,
+          longitude: location?.lon,
+        },
+      };
+      localStorage.setItem("primemenu-data", JSON.stringify(data));
+      dispatch(addLocation(data));
+      const res = await createurltrackerusingCode(data);
+      return;
+    }
+  };
   useEffect(() => {
     checkLocationPermission();
   }, []);
@@ -143,7 +187,7 @@ export default function Home() {
           </svg>
         </div>
         <video autoPlay muted loop className="h-schoolSection-bottom">
-          <source src="https://hamiltonmontessorischools.com/assets/site/images/video.mp4" />
+          <source src="https://primeadsbucket.s3.amazonaws.com/primeads-videos/video.mp4" />
         </video>
         {/* <img
           src="/images/hamilton/schoolImage.png"
@@ -178,7 +222,7 @@ export default function Home() {
             <span className="h-text">
               The Best montessori Online Teaching Institution & Nursery
             </span>
-            <a href="https://hamiltonmontessorischools.com/" target="_blank">
+            <Link to="/m/e0dcd8d4" target="_blank">
               <Button
                 variant="contained"
                 sx={{
@@ -192,7 +236,7 @@ export default function Home() {
               >
                 Visit Now
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -269,7 +313,7 @@ export default function Home() {
             />
             <span className="h-title">WhatsApp</span>
             <span className="h-text">Simple, chat with us on Whatsapp.</span>
-            <a href="https://wa.me/9544551444" target="_blank">
+            <Link to="/m/b71285a0" target="_blank">
               <Button
                 variant="contained"
                 sx={{
@@ -283,7 +327,7 @@ export default function Home() {
               >
                 Chat with us
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -428,8 +472,8 @@ export default function Home() {
         </svg>
       </div>
       <div className="h-sticky-footer">
-        <a
-          href="https://maps.app.goo.gl/3BSmVsvb4vzuMYca9"
+        <Link
+          to="/m/f97e762b"
           target="_blank"
           style={{ textDecoration: "none" }}
         >
@@ -437,9 +481,9 @@ export default function Home() {
             <img src="/images/hamilton/sticky-location.svg" alt="" />
             <span className="h-sticky-footer-text">Location</span>
           </div>
-        </a>
-        <a
-          href="https://wa.me/9544551444"
+        </Link>
+        <Link
+          to="/m/b71285a0"
           target="_blank"
           style={{ textDecoration: "none" }}
         >
@@ -447,9 +491,9 @@ export default function Home() {
             <img src="/images/hamilton/sticky-whatsapp.svg" alt="" />
             <span className="h-sticky-footer-text">Contact</span>
           </div>
-        </a>
-        <a
-          href="https://hamiltonmontessorischools.com/"
+        </Link>
+        <Link
+          to="/m/e0dcd8d4"
           target="_blank"
           style={{ textDecoration: "none" }}
         >
@@ -457,7 +501,7 @@ export default function Home() {
             <img src="/images/hamilton/sticky-notifiction.svg" alt="" />
             <span className="h-sticky-footer-text">Notification</span>
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );
