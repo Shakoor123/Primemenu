@@ -182,7 +182,6 @@
   justify-content: center;
 }
 .h-header-place {
-  padding: 12px;
   border-radius: 50px;
   border: 1px solid #ececec;
   display: flex;
@@ -193,4 +192,18 @@
   font-weight: 600;
   color: #4b4b4b;
   margin-right: 25px;
+  height: 40px;
+  padding: 0 15px;
+}
+.loadingWrapper {
+  max-height: 30px;
+  overflow: hidden;
+  transform: translateY(0px);
+  padding-bottom: 20px;
+}
+.loadingWrapper div svg {
+  max-height: 40px;
+}
+.decreseOpacity {
+  opacity: 0.6;
 }

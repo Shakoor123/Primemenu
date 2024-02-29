@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { addLocation } from "../../../redux/locationSlice";
 import { createurltrackerusingCode } from "../../../helper/apiCalls";
 import { Link, useNavigate } from "react-router-dom";
+import ReactLoading from "react-loading";
 export default function Home() {
   const [place, setPlace] = useState("");
   const [count, setCount] = useState(1);
@@ -13,7 +14,7 @@ export default function Home() {
   const navigate = useNavigate();
   var options = {
     enableHighAccuracy: true,
-    timeout: 5000,
+    timeout: 7000,
     maximumAge: 0,
   };
   function success(pos) {
@@ -37,6 +38,7 @@ export default function Home() {
     setCount(count + 1);
   }
   function errors(err) {
+    setPlace("Disabled");
     createNewEntryforUrltracker();
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
@@ -112,6 +114,11 @@ export default function Home() {
     }
   };
 
+  const requestLocationPermission = () => {
+    console.log("button clicked");
+    navigator.geolocation.getCurrentPosition(success, errors, options);
+  };
+
   return (
     <div className="h-home">
       <div className="h-header">
@@ -120,28 +127,29 @@ export default function Home() {
           alt=""
           className="h-logo"
         />
-        {place && (
-          <div className="h-header-place">
-            <svg
-              width="15"
-              height="14"
-              viewBox="0 0 15 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1 13.0015C3.04708 10.1673 8.47775 6.46925 13.8577 13.0015"
-                stroke="#4B4B4B"
-                stroke-linecap="round"
+        <div className="h-header-place">
+          <img
+            src="/images/hamilton/personIcon.svg"
+            alt=""
+            className="personIcon"
+            onClick={requestLocationPermission}
+          />
+          {place ? (
+            <span className={place == "Disabled" && "decreseOpacity"}>
+              {place}
+            </span>
+          ) : (
+            <div className="loadingWrapper">
+              <ReactLoading
+                type={"bubbles"}
+                color={"#F68712"}
+                height={20}
+                width={60}
+                marginBottom={"20px"}
               />
-              <path
-                d="M12.205 5.04049C12.205 7.53421 10.1181 9.58099 7.51215 9.58099C4.90624 9.58099 2.81934 7.53421 2.81934 5.04049C2.81934 2.54678 4.90624 0.5 7.51215 0.5C10.1181 0.5 12.205 2.54678 12.205 5.04049Z"
-                stroke="#4B4B4B"
-              />
-            </svg>
-            {place}
-          </div>
-        )}
+            </div>
+          )}
+        </div>
       </div>
       <div className="h-schoolSection">
         <div className="h-schoolSection-top">
