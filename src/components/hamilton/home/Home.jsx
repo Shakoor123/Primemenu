@@ -252,7 +252,12 @@ export default function Home() {
               Join our 6 months span course & change the way the future
               generation learn things.
             </span>
-            <a href="https://wa.me/9544551444" target="_blank">
+            <Link
+              to="/m/b71285a0"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
+              {" "}
               <Button
                 variant="contained"
                 sx={{
@@ -266,7 +271,7 @@ export default function Home() {
               >
                 Enquire Now
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -289,7 +294,12 @@ export default function Home() {
             <span className="h-text">
               We're nearby. Find us on Google Maps.
             </span>
-            <a href="https://maps.app.goo.gl/3BSmVsvb4vzuMYca9" target="_blank">
+            <Link
+              to="/m/f97e762b"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
+              {" "}
               <Button
                 variant="contained"
                 sx={{
@@ -303,7 +313,7 @@ export default function Home() {
               >
                 Check on Map
               </Button>
-            </a>
+            </Link>
           </div>
           <div className="h-cta-item">
             <img
