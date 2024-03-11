@@ -1,0 +1,18 @@
+@mixin heading {
+    font-family: "Merriweather", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  @mixin body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .test2 {
+    @include body;
+  }
+  
+  .test1 {
+    @include heading;
+  }
+  
