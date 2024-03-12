@@ -9,6 +9,7 @@ import img5 from "./assets/img5.webp";
 import img6 from "./assets/img6.webp";
 import loc from "./assets/location.svg";
 import wha from "./assets/whatsapp.svg";
+import icon from "./assets/icon.svg";
 export const Gems = () => {
   return (
     <div className="gems-body">
@@ -91,6 +92,10 @@ export const Gems = () => {
             <button className="btn-card">Chat with us</button>
           </div>
         </div>
+      </div>
+      <div className="footer">
+        <img src={icon} height="16px" alt="" />
+        <p>Made in India | A DMS product</p>
       </div>
     </div>
   );

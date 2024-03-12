@@ -17,3 +17,16 @@
   display: flex;
   flex-direction: column;
 }
+
+.footer {
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin-top: 4px;
+    font-size: 10px;
+    color: #bbb;
+    text-align: center;
+  }
+}
