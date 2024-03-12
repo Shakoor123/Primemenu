@@ -40,6 +40,8 @@ export const Gems = () => {
             {" "}
           </div>
         </div>
+        <div className="image-card">
+        {" "} </div>
       </div>
     </div>
   );
