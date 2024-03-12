@@ -7,6 +7,8 @@ import img3 from "./assets/img3.webp";
 import img4 from "./assets/img4.webp";
 import img5 from "./assets/img5.webp";
 import img6 from "./assets/img6.webp";
+import loc from "./assets/location.svg";
+import wha from "./assets/whatsapp.svg";
 export const Gems = () => {
   return (
     <div className="gems-body">
@@ -65,6 +67,28 @@ export const Gems = () => {
           <div className="row">
             <img src={img5} alt="" />
             <img src={img6} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="cta-section">
+        <div className="cta-card">
+          <img src={loc} alt="" height="72px" />
+          <div className="contents">
+            <div className="textbox">
+              <h2>Find us</h2>
+              <p>We're nearby. Find us on Google Maps.</p>
+            </div>
+            <button className="btn-card">Check on map</button>
+          </div>
+        </div>
+        <div className="cta-card">
+          <img src={wha} alt="" height="72px" />
+          <div className="contents">
+            <div className="textbox">
+              <h2>Whatsapp</h2>
+              <p>Simple, chat with us on Whatsapp.</p>
+            </div>
+            <button className="btn-card">Chat with us</button>
           </div>
         </div>
       </div>
