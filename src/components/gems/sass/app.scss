@@ -1,9 +1,15 @@
 @use "./config";
 @use "./navbar";
 @use "./button";
+@use "./hero";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.gems-body {
+  display: flex;
+  flex-direction: column;
 }
