@@ -2,11 +2,13 @@
 @use "./navbar";
 @use "./button";
 @use "./hero";
+@use "./card";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: none;
 }
 
 .gems-body {
