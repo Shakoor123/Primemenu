@@ -10,6 +10,8 @@ import img6 from "./assets/img6.webp";
 import loc from "./assets/location.svg";
 import wha from "./assets/whatsapp.svg";
 import icon from "./assets/icon.svg";
+import { Link } from "react-router-dom";
+
 export const Gems = () => {
   return (
     <div className="gems-body">
@@ -24,9 +26,18 @@ export const Gems = () => {
                   Explore more on <br></br>
                   <span>Our Website.</span>
                 </h2>
-                <p>The Best montessori Online Teaching Institution & Nursery</p>
+                <p>
+                  Find answers to your questions and explore related topics by
+                  visiting our website
+                </p>
               </div>
-              <button className="btn-card">Visit now</button>
+              <Link
+                to="/m/61f4af09"
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                <button className="btn-card">Visit now</button>
+              </Link>
             </div>
           </div>
           <div className="right" id="card1">
@@ -40,9 +51,18 @@ export const Gems = () => {
                 <h2>
                   <span>Enroll now!</span>
                 </h2>
-                <p>The Best montessori Online Teaching Institution & Nursery</p>
+                <p>
+                  Engage with additional features and content by exploring
+                  further on our website
+                </p>
               </div>
-              <button className="btn-card">Enroll now</button>
+              <Link
+                to="/m/7e405c01"
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                <button className="btn-card">Enroll now</button>
+              </Link>
             </div>
           </div>
           <div className="right" id="card2">
@@ -79,7 +99,13 @@ export const Gems = () => {
               <h2>Find us</h2>
               <p>We're nearby. Find us on Google Maps.</p>
             </div>
-            <button className="btn-card">Check on map</button>
+            <Link
+              to="/m/878b9fc4"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
+              <button className="btn-card">Check on map</button>
+            </Link>
           </div>
         </div>
         <div className="cta-card">
@@ -89,7 +115,13 @@ export const Gems = () => {
               <h2>Whatsapp</h2>
               <p>Simple, chat with us on Whatsapp.</p>
             </div>
-            <button className="btn-card">Chat with us</button>
+            <Link
+              to="/m/7e405c01"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
+              <button className="btn-card">Chat with us</button>
+            </Link>
           </div>
         </div>
       </div>

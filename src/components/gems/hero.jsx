@@ -1,4 +1,4 @@
-import heroimg from "./assets/heroimg.webp";
+import bannerImage from "./assets/bannerImage.jpg";
 export const Hero = () => {
   return (
     <div className="hero">
@@ -7,9 +7,9 @@ export const Hero = () => {
           <span className="title">Gems</span>
           <br></br>Modern Academy
         </h1>
-        <h3>Enrich the quality of your kid's academic life!</h3>
+        <h3>The future belongs to the curious</h3>
       </div>
-      <img className="bottom" src={heroimg} alt="" />
+      <img className="bottom" src={bannerImage} alt="" />
     </div>
   );
 };

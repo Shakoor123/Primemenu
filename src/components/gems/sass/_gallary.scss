@@ -27,15 +27,17 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: auto;
+  gap: 8px;
 
   .row {
     height: 118px;
-    margin-top: 8px;
     display: flex;
-    justify-content: space-between;
+    gap: 8px;
   }
   img {
     height: 118px;
     width: auto;
+    object-fit: contain;
   }
 }
