@@ -11,7 +11,7 @@ import loc from "./assets/location.svg";
 import wha from "./assets/whatsapp.svg";
 import icon from "./assets/icon.svg";
 import { Link } from "react-router-dom";
-
+import bannerImage from "./assets/banner.webp";
 export const Gems = () => {
   return (
     <div className="gems-body">
@@ -69,7 +69,7 @@ export const Gems = () => {
             {" "}
           </div>
         </div>
-        <div className="image-card"> </div>
+        <img src={bannerImage} alt="" className="image-card" />
       </div>
       <div className="gallary-section">
         <div className="heading">
