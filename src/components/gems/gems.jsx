@@ -73,7 +73,7 @@ export const Gems = () => {
       </div>
       <div className="gallary-section">
         <div className="heading">
-          <h2>Gallary</h2>
+          <h2>Gallery</h2>
           <p>Glimpses of the good old days</p>
         </div>
         <div className="image-grid">
